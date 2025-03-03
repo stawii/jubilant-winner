@@ -84,7 +84,8 @@ jobs:
 
 
   call-bar:
-    uses: stawii/jubilant-winner/build.yml@master
+    # references to workflows must be rooted in '.github/workflows'
+    uses: ./build.yml
     with:
       name: bar
     needs:
