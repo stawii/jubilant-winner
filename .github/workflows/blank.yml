@@ -50,6 +50,7 @@ jobs:
             ls -al /etc | tee TESTFILE
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
+          pwd && ls -al
     outputs:
       THE_LIST: ${{ steps.list.outputs.FILE_LIST }}
 
@@ -58,7 +59,7 @@ jobs:
     steps:
       - name: List things
         run: |
-          ls -al
+          pwd && ls -al
           echo "FILE_LIST is TESTFILE"
 
 
