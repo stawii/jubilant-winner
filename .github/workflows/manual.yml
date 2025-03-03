@@ -9,6 +9,8 @@ on:
       name:
         type: string
         default: someone
+        description: The name of thingy
+        required: true
 
   # To enable a workflow to be triggered manually.
   workflow_dispatch:
