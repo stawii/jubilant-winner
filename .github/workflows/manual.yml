@@ -11,6 +11,10 @@ on:
         default: someone
         description: The name of thingy
         required: true
+    outputs:
+      testout:
+          description: Where is this visible?
+          value: "no idea lols"
 
   # To enable a workflow to be triggered manually.
   workflow_dispatch:

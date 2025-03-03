@@ -91,6 +91,18 @@ jobs:
     needs:
       - call-foo
 
+  testout:
+    runs-on: ubuntu-latest
+    needs:
+      - call-foo
+    steps:
+      - env:
+        TESTOUT: ${{ needs.call-foo.outputs.testout }}
+      run: |
+        hostname -f && pwd && ls -al
+        echo "$TESTOUT"
+
+
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
