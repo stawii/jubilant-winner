@@ -69,7 +69,7 @@ jobs:
         run: |
           echo runner.name is ${{ runner.name }}
           hostname -f && pwd && ls -al
-          echo "FILE_LIST is: ${{ fromJson(needs.get-versions.outputs.THE_LIST) }}"
+          echo "FILE_LIST is: ${{ needs.get-versions.outputs.THE_LIST }}"
 
 
   call-foo:
@@ -80,7 +80,7 @@ jobs:
       name: foo
     strategy:
       matrix:
-        version: ${{ needs.get-versions.outputs.THE_LIST }}"
+        version: ${{ fromJson(needs.get-versions.outputs.THE_LIST) }}"
 
 
   call-bar:
