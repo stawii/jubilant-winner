@@ -85,7 +85,7 @@ jobs:
 
   call-bar:
     # references to workflows must be rooted in '.github/workflows'
-    uses: ./build.yml
+    uses: ./build.yml@master
     with:
       name: bar
     needs:
