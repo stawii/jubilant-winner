@@ -84,7 +84,7 @@ jobs:
 
 
   call-bar:
-    uses: stawii/jubilant-winner/build.yml
+    uses: stawii/jubilant-winner/build.yml@master
     with:
       name: bar
     needs:
