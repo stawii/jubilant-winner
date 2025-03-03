@@ -38,9 +38,9 @@ jobs:
   call-foo:
     uses: ./.github/workflows/manual.yml
     with:
-      username: foo
+      name: foo
 
   call-bar:
     uses: ./.github/workflows/manual.yml
     with:
-      username: bar
+      name: bar
