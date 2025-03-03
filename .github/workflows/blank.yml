@@ -80,7 +80,7 @@ jobs:
       name: foo
     strategy:
       matrix:
-        version: ${{ fromJson(needs.get-versions.outputs.THE_LIST) }}"
+        version: ${{ fromJson(needs.get-versions.outputs.THE_LIST) }}
 
 
   call-bar:
