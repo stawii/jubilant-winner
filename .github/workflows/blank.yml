@@ -49,7 +49,10 @@ jobs:
           hostname -f && pwd && ls -al
           {
             echo 'FILE_LIST<<EOF'
-            ls -al /etc | tee TESTFILE
+            # ls -al /etc | tee TESTFILE
+            echo one
+            echo two
+            echo t33
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
     outputs:
@@ -69,11 +72,13 @@ jobs:
 
   call-foo:
     uses: ./.github/workflows/manual.yml
+    needs:
+      - get-versions
     with:
       name: foo
     strategy:
       matrix:
-        version: [10, 12, 14]
+        version: ${{ needs.get-versions.outputs.THE_LIST }}"
 
 
   call-bar:
