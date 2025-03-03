@@ -34,6 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  needs:
+    - call-foo
+    - call-bar
 
   call-foo:
     uses: ./.github/workflows/manual.yml
@@ -44,3 +47,5 @@ jobs:
     uses: ./.github/workflows/manual.yml
     with:
       name: bar
+    needs:
+      - call-foo
