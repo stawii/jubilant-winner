@@ -84,7 +84,7 @@ jobs:
 
 
   call-bar:
-    uses: ./.github/workflows/manual.yml
+    uses: stawii/jubilant-winner/build.yml
     with:
       name: bar
     needs:
