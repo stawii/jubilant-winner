@@ -39,22 +39,27 @@ jobs:
       - call-foo
       - call-bar
 
-  # get-versions:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: List things
-  #       run: |
-  #         echo 'FILE_LIST<<EOF'
-  #         ls -al /etc
-  #         echo 'EOF'
-  #   outputs:
-  #     THE_LIST:
+  get-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List things
+        id: list
+        run: |
+          {
+            echo 'FILE_LIST<<EOF'
+            ls -al /etc | tee TESTFILE
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+    outputs:
+      THE_LIST: ${{ steps.list.outputs.FILE_LIST }}
 
-  # show-versions:
-  #   runs-on: ubuntu-latest
-  #   - name: List things
-  #     run: |
-  #       echo "FILE_LIST is ${{ steps.get-versions.outputs.FILE_LIST }}"
+  show-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List things
+        run: |
+          ls -al
+          echo "FILE_LIST is TESTFILE"
 
 
   call-foo:
