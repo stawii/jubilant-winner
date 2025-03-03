@@ -50,12 +50,15 @@ jobs:
           {
             echo 'FILE_LIST<<EOF'
             # ls -al /etc | tee TESTFILE
-            echo one
-            echo two
-            echo t33
+            {
+              echo one
+              echo two
+              echo t33
+            } | jq -Rn '[inputs]'
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
     outputs:
+      FOOS: ${{  }}
       THE_LIST: ${{ steps.list.outputs.FILE_LIST }}
 
   show-versions:
@@ -67,7 +70,7 @@ jobs:
         run: |
           echo runner.name is ${{ runner.name }}
           hostname -f && pwd && ls -al
-          echo "FILE_LIST is: ${{ needs.get-versions.outputs.THE_LIST }}"
+          echo "FILE_LIST is: ${{ fromJson(needs.get-versions.outputs.THE_LIST) }}"
 
 
   call-foo:

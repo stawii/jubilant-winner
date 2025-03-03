@@ -3,14 +3,15 @@
 name: Manual workflow
 
 on:
+  # The workflow can be called by another workflow.
   workflow_call:
     inputs:
       name:
         type: string
         default: someone
 
+  # To enable a workflow to be triggered manually.
   workflow_dispatch:
-    # Inputs the workflow accepts.
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
