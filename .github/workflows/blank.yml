@@ -58,7 +58,6 @@ jobs:
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
     outputs:
-      FOOS: ${{  }}
       THE_LIST: ${{ steps.list.outputs.FILE_LIST }}
 
   show-versions:
