@@ -34,3 +34,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  call-foo:
+    uses: octo-org/example-repo/.github/workflows/called-workflow.yml@main
+    with:
+      username: foo
+
+  call-bar:
+    uses: octo-org/example-repo/.github/workflows/called-workflow.yml@main
+    with:
+      username: bar
