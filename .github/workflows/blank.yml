@@ -55,6 +55,8 @@ jobs:
       THE_LIST: ${{ steps.list.outputs.FILE_LIST }}
 
   show-versions:
+    needs:
+      - get-versions
     runs-on: ubuntu-latest
     steps:
       - name: List things
