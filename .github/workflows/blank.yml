@@ -62,7 +62,7 @@ jobs:
       - name: List things
         run: |
           hostname -f && pwd && ls -al
-          echo "FILE_LIST is TESTFILE"
+          echo "FILE_LIST is: ${{ needs.get-versions.outputs.THE_LIST }}"
 
 
   call-foo:
