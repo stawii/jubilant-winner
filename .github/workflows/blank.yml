@@ -43,6 +43,10 @@ jobs:
     uses: ./.github/workflows/manual.yml
     with:
       name: foo
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+
 
   call-bar:
     uses: ./.github/workflows/manual.yml
