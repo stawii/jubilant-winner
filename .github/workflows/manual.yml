@@ -14,7 +14,7 @@ on:
     outputs:
       testout:
           description: Where is this visible?
-          value: "no idea lols"
+          value: "no idea lols ${{ inputs.name }}"
 
   # To enable a workflow to be triggered manually.
   workflow_dispatch:
