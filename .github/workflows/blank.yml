@@ -97,10 +97,10 @@ jobs:
       - call-foo
     steps:
       - env:
-        TESTOUT: ${{ needs.call-foo.outputs.testout }}
-      run: |
-        hostname -f && pwd && ls -al
-        echo "$TESTOUT"
+          TESTOUT: ${{ needs.call-foo.outputs.testout }}
+        run: |
+          hostname -f && pwd && ls -al
+          echo "$TESTOUT"
 
 
   job1:
