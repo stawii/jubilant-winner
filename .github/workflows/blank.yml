@@ -36,11 +36,11 @@ jobs:
           echo test, and deploy your project.
 
   call-foo:
-    uses: octo-org/example-repo/.github/workflows/called-workflow.yml@main
+    uses: ./.github/workflows/manual.yml
     with:
       username: foo
 
   call-bar:
-    uses: octo-org/example-repo/.github/workflows/called-workflow.yml@main
+    uses: ./.github/workflows/manual.yml
     with:
       username: bar
